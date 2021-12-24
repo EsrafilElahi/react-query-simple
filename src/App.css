@@ -1,38 +1,144 @@
-.App {
+/* App */
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 2.5em;
+}
+
+.links span {
+  border: 1px solid #ddd9d9;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.links span:hover {
+  color: #ddd9d9;
+  background: black;
+}
+
+.content {
+  margin-top: 4.5em;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* users */
+.users {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.user-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 1.5em;
+  border: 1px solid #08e2ed;
+  border-radius: 6px;
+  padding: 1em 7em 1em 1em;
+  height: 5em;
+  width: fit-content;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* posts */
+
+.post-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 1.5em;
+  border: 1px solid #08e2ed;
+  border-radius: 6px;
+  padding: 1em 7em 1em 1em;
+  height: 5em;
+  width: fit-content;
+}
+
+/* photos */
+
+.photo-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.photo-item input {
+  padding: 0.9em 0.6em;
+  border: 1px solid #ddd9d9;
+  border-radius: 7px;
+  outline: none;
+  margin-bottom: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 7em;
+  justify-content: space-evenly;
+}
+
+.input-label label {
+  font-weight: bold;
+}
+
+.photo-item h3 {
+  margin-bottom: 1em;
+}
+
+.photo-item img {
+  width: 25em;
+  height: 20em;
+}
+
+/* album */
+
+.album-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 1.5em auto;
+  border: 1px solid #08e2ed;
+  border-radius: 6px;
+  padding: 1em 7em 1em 1em;
+  height: 4em;
+  width: fit-content;
+}
+
+/* todo */
+
+.todo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 1.5em auto;
+  border: 1px solid #08e2ed;
+  border-radius: 6px;
+  padding: 1em 7em 1em 1em;
+  height: 3.5em;
+  width: fit-content;
+}
+
+.input-todo {
+  padding: 0.8em 0.6em;
+  outline: none;
+  border: 1px solid #ddd9d9;
+  border-radius: 7px;
+  margin-right: 0.5em;
+}
+
+.btn-todo {
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 7px;
+  background: #ede3e3;
+  cursor: pointer;
 }
