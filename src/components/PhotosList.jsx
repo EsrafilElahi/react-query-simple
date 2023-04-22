@@ -6,8 +6,12 @@ import PhotosListItem from "./PhotosListItem";
 function PhotosList({ photoID }) {
   const [imgId, setImgID] = useState(1);
 
-  const { data, status } = useQuery(["photos", (photoID = imgId)], () =>
-    getPhotosData(photoID)
+  const { data, status } = useQuery(
+    ["photos", (photoID = imgId)],
+    () => getPhotosData(photoID),
+    {
+      enabled: !!imgId // must imgId exist for getPhotosData
+    }
   );
 
   console.log("data :", data);

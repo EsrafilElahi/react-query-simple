@@ -1,92 +1,71 @@
-import React, { useState } from "react";
-import UsersList from "./components/UsersList";
-import PostsList from "./components/PostsList";
-import PhotosList from "./components/PhotosList";
-import AlbumsList from "./components/AlbumsList";
-import TodosList from "./components/TodosList";
+import React, { useState, Suspense, lazy } from "react";
+// import UsersList from "./components/UsersList";
+// import PostsList from "./components/PostsList";
+// import PhotosList from "./components/PhotosList";
+// import AlbumsList from "./components/AlbumsList";
+// import TodosList from "./components/TodosList";
 
 import "./App.css";
 
 function App() {
-  const [routes, setRoutes] = useState({
-    users: true,
-    posts: false,
-    photos: false,
-    albums: false,
-    todos: false,
-  });
+
+  const [activeRoute, setActiveRoute] = useState("USERS");
+
+  const dynamicComponents = {
+    USERS: lazy(() => import("./components/UsersList")),
+    PHOTOS: lazy(() => import("./components/PhotosList")),
+    POSTS: lazy(() => import("./components/PostsList")),
+    ALBUMS: lazy(() => import("./components/AlbumsList")),
+    TODOS: lazy(() => import("./components/TodosList"))
+  }
+
+
+  const ChosenComponent = dynamicComponents[activeRoute]
+
+
 
   return (
     <div>
       <div className="links">
         <span
           onClick={(e) =>
-            setRoutes({
-              users: true,
-              posts: false,
-              photos: false,
-              albums: false,
-              todos: false,
-            })
+            setActiveRoute("USERS")
           }
         >
           Users
         </span>
         <span
           onClick={(e) =>
-            setRoutes({
-              users: false,
-              posts: true,
-              photos: false,
-              albums: false,
-              todos: false,
-            })
+            setActiveRoute("POSTS")
           }
         >
           Posts
         </span>
         <span
           onClick={(e) =>
-            setRoutes({
-              users: false,
-              posts: false,
-              photos: true,
-              albums: false,
-              todos: false,
-            })
+            setActiveRoute("PHOTOS")
           }
         >
           photos
         </span>
         <span
           onClick={(e) =>
-            setRoutes({
-              users: false,
-              posts: false,
-              photos: false,
-              albums: true,
-              todos: false,
-            })
+            setActiveRoute("ALBUMS")
           }
         >
           Albums
         </span>
         <span
           onClick={(e) =>
-            setRoutes({
-              users: false,
-              posts: false,
-              photos: false,
-              albums: false,
-              todos: true,
-            })
+            setActiveRoute("TODOS")
           }
         >
           Todos
         </span>
       </div>
+
       <div className="content">
-        {routes.users ? (
+        {/* {routes.users ? (
           <UsersList />
         ) : routes.posts ? (
           <PostsList />
@@ -96,7 +75,10 @@ function App() {
           <AlbumsList />
         ) : (
           <TodosList />
-        )}
+        )} */}
+
+        <ChosenComponent />
+
       </div>
     </div>
   );

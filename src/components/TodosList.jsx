@@ -5,8 +5,10 @@ import {
   useQueryClient,
   setQueryData,
 } from "react-query";
+
 import { getTodosData, postTodo } from "../api/FetchApi";
 import axios from "axios";
+
 import TodosListItem from "./TodosListItem";
 
 function TodosList() {
@@ -17,12 +19,7 @@ function TodosList() {
   const mutation = useMutation((newTodo) => {
     return fetch("https://jsonplaceholder.typicode.com/todos", {
       method: "POST",
-      body: JSON.stringify({
-        title: val,
-        id: Date.now(),
-        userId: 1,
-        complete: false,
-      }),
+      body: JSON.stringify(newTodo),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
