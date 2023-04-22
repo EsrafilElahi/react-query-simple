@@ -157,6 +157,5 @@ const saveMutation = useMutation((patchTodo), {
 const todos = queryClient.getQueryData(['todos']);
 const todo = queryClient.getQueryData(['todos', id = 5]);
 
-
 // ==================================================================================================
 
