@@ -153,6 +153,7 @@ const saveMutation = useMutation((patchTodo), {
 
 // ==================================================================================================
 
+// to access data in another pages
 const todos = queryClient.getQueryData(['todos']);
 const todo = queryClient.getQueryData(['todos', id = 5]);
 
