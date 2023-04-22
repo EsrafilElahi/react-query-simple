@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
-import { getPhotosData } from "../api/FetchApi";
+import { getPhotosData } from "../service/FetchApi";
 import PhotosListItem from "./PhotosListItem";
 
 function PhotosList({ photoID }) {

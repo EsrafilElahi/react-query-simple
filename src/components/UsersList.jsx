@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { getUsersData } from "../api/FetchApi";
+import { getUsersData } from "../service/FetchApi";
 import UsersListItem from "./UsersListItem";
 
 function UsersList() {

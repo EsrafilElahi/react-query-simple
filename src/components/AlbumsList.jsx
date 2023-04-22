@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
-import { getAlbumsData } from "../api/FetchApi";
+import { getAlbumsData } from "../service/FetchApi";
 import AlbumsListItem from "./AlbumsListItem";
 
 function AlbumsList() {

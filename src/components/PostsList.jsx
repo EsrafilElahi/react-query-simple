@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { getPostsData } from "../api/FetchApi";
+import { getPostsData } from "../service/FetchApi";
 import PostsListItem from "./PostsListItem";
 
 function PostsList() {

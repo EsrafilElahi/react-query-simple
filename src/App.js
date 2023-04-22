@@ -1,9 +1,9 @@
 import React, { useState, Suspense, lazy } from "react";
-// import UsersList from "./components/UsersList";
-// import PostsList from "./components/PostsList";
-// import PhotosList from "./components/PhotosList";
-// import AlbumsList from "./components/AlbumsList";
-// import TodosList from "./components/TodosList";
+import UsersList from "./components/UsersList";
+import PostsList from "./components/PostsList";
+import PhotosList from "./components/PhotosList";
+import AlbumsList from "./components/AlbumsList";
+import TodosList from "./components/TodosList";
 
 import "./App.css";
 
@@ -11,21 +11,10 @@ function App() {
 
   const [activeRoute, setActiveRoute] = useState("USERS");
 
-  const dynamicComponents = {
-    USERS: lazy(() => import("./components/UsersList")),
-    PHOTOS: lazy(() => import("./components/PhotosList")),
-    POSTS: lazy(() => import("./components/PostsList")),
-    ALBUMS: lazy(() => import("./components/AlbumsList")),
-    TODOS: lazy(() => import("./components/TodosList"))
-  }
-
-
-  const ChosenComponent = dynamicComponents[activeRoute]
-
-
 
   return (
     <div>
+
       <div className="links">
         <span
           onClick={(e) =>
@@ -65,19 +54,19 @@ function App() {
       </div>
 
       <div className="content">
-        {/* {routes.users ? (
+        {activeRoute === "USERS" ? (
           <UsersList />
-        ) : routes.posts ? (
+        ) : activeRoute === "POSTS" ? (
           <PostsList />
-        ) : routes.photos ? (
+        ) : activeRoute === "PHOTOS" ? (
           <PhotosList />
-        ) : routes.albums ? (
+        ) : activeRoute === "ALBUMS" ? (
           <AlbumsList />
         ) : (
           <TodosList />
-        )} */}
+        )}
 
-        <ChosenComponent />
+        {/* <ChosenComponent /> */}
 
       </div>
     </div>

@@ -6,7 +6,7 @@ import {
   setQueryData,
 } from "react-query";
 
-import { getTodosData, postTodo } from "../api/FetchApi";
+import { getTodosData, postTodo } from "../service/FetchApi";
 import axios from "axios";
 
 import TodosListItem from "./TodosListItem";
